@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ordering</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- <style>
+      #final-order{
+        color: red;
+      }
+    </style> -->
+</head>
+<body style="background-color:rgba(140, 143, 104, 0.89)";>
+   <h2 class="text-center text-lg mb-10"> What would you like to order?</h2>
+ 
+   <div class="rounded bg-blue-200 text-black h-[500px] w-[350px] m-6 mx-auto p-4"> 
+    <div class="relative rounded border border-black p-2 h-full w-full">
+
+           
+    <div style=" padding-left:65px;margin-bottom:45px; "class="parent">
+      <div>
+      <button class="dropdown">Masala</button>
+        <ul class="dropdown-content">
+          <li class="item">
+            <span class="level">Small-s</span>
+            <input class="qty"  data-item="masala" data-size="small" type="number" placeholder="Quantity">
+          </li>
+
+          <li class="item">
+           <span class="level">Medium-s </span>
+           <input class="qty"   data-item="masala" data-size="medium" type="number" placeholder="Quantity">
+          </li>
+
+          <li class="item">
+            <span class="level">Large-s</span>
+            <input class="qty" data-item="masala" data-size="large" type="number" placeholder="Quantity">
+          </li>
+          </ul>
+          </div>
+          </div>
+
+   <!-- for lemon tea -->
+    
+ <div style="padding-left:65px; margin-bottom:40px" class="parent">
+ <div>
+      <button class="dropdown-l" style="margin-top:110px" >lemon</button>
+        <ul class="dropdown-content-l">
+          <li class="item">
+            <span class="level">Small </span>
+            <input class="qty" data-item="lemon" data-size="small" type="number" placeholder="Quantity">
+          </li>
+
+          <li class="item">
+           <span class="level">Medium </span>
+           <input class="qty"  data-item="lemon" data-size="medium" type="number" placeholder="Quantity">
+          </li>
+
+          <li class="item">
+            <span class="level">Large</span>
+            <input class="qty"  data-item="lemon" data-size="large" type="number" placeholder="Quantity">
+          </li>
+          </ul>
+          </div>
+        </div>
+
+        <!-- for ginger  -->
+    <div style="margin-left:65px;margin-bottom:45px" class="parent">
+      <div>
+        <button class="dropdown-g" style="margin-top:115px;">Ginger</button>
+         <ul class="dropdown-content-g">
+          <li class="item">
+            <span class="level">Small</span>
+            <input class="qty"  data-item="ginger" data-size="small" type="number" placeholder="Quantity">
+          </li>
+
+          <li class="item">
+            <span class="level">Medium</span>
+            <input class="qty"  data-item="ginger" data-size="medium" type="number" placeholder="Quantity">
+          </li>
+
+          <li class="item">
+            <span class="level">Large</span>
+            <input class="qty" data-item="ginger" data-size="large" type="number" placeholder="Quantity">
+          </li>
+         </ul>
+         </div>
+    </div>
+        
+   </div>
+   </div>
+   </div>
+   
+   <div class="btn">
+             <button id="submit-order">submit-order</button>
+         </div>
+
+         <div id="final-order">Orders</div>
+
+<script>
+document.getElementById('submit-order').addEventListener('click', () => {
+  const quantities = {};
+  document.querySelectorAll('.qty').forEach(input => {
+    const item = input.dataset.item;
+    const size = input.dataset.size;
+    const qty = parseInt(input.value) || 0;
+
+    if (qty > 0) {
+      if (!quantities[item]) {
+        quantities[item] = {};
+      }
+      quantities[item][size] = qty;
+    }
+  });
+
+  const resultDiv = document.getElementById('final-order');
+  let resultHTML = `<strong>Orders:</strong><br>`;
+
+  function anyOrder(itemData) {
+    return itemData && (
+      (itemData.small || 0) > 0 ||
+      (itemData.medium || 0) > 0 ||
+      (itemData.large || 0) > 0
+    );
+  }
+
+  function renderItem(itemName) {
+    const itemData = quantities[itemName] || {};
+    if (anyOrder(itemData)) {
+      resultHTML += `<u>${itemName}</u><br>`;
+      if (itemData.small) resultHTML += `small: ${itemData.small}<br>`;
+      if (itemData.medium) resultHTML += `medium: ${itemData.medium}<br>`;
+      if (itemData.large) resultHTML += `large: ${itemData.large}<br>`;
+      resultHTML += `<br>`;
+    }
+  }
+
+  renderItem('masala');
+  renderItem('lemon');
+  renderItem('ginger');
+
+  resultDiv.innerHTML = resultHTML.trim();
+  console.log('quantities:', quantities);
+});
+</script>
+
+
+  
+</body>
+</html>

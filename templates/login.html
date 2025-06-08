@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+login page
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- {% if error %}
+<div id="error-message" class="blink">Invalid username or password!</div>
+{% endif %} -->
+  <div class="picture">
+<div class="foram">
+<form method='POST'>
+       {% csrf_token %}
+    
+   <br> <label>username:</label> 
+    <input type="text" name="username" value="{{ username|default:'' }}"  style="background: linear-gradient(to right, #445e44, #798b7d); 
+                  color: black; padding:5px; border: none; border-radius: 4px;"></br>
+
+    <br> <label>password:</label>
+     <input type="text" name="password" value="" style="background: linear-gradient(to right, #445e44, #798b7d); 
+                  color: black; padding: 5px; border: none; border-radius: 4px;"></br>
+     
+     <button class="submit">login</button>
+</form>
+</div>
+</div>
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+    <li style="color:red; margin-left:45vw; font-size:large;">{{message}}</li>
+    {% endfor %}
+</ul>
+{% endif %} 
+{% endblock %}
