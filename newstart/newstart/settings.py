@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@q!+*&!f=6t411%$h6%-@3r6^o-=fh^81$kjur0_82530y!4c^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chiya-mine.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['tryyyy-bj4j.onrender.com']
 
 
 
@@ -150,3 +150,17 @@ MEDIA_ROOT=BASE_DIR/'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'chai:all_chai'  # Using the URL name (recommended) 
+
+INSTALLED_APPS += ['storages']
+
+# AWS settings for media files
+AWS_ACCESS_KEY_ID = 'your-access-key-id'
+AWS_SECRET_ACCESS_KEY = 'your-secret-access-key'
+AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
+AWS_S3_REGION_NAME = 'your-region'  # e.g., 'us-east-1'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+# Tell Django to use S3 for media files
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
