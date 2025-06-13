@@ -12,8 +12,8 @@ chai page
 <div class="grid grid-cols-3 gap-4 m-4 container ">
 
 {% for chai in chais %}
-<div class="bg-blue-800 p-8 column-gap-4" >
-    <img class=" rounded h-60 w-45 shadow-lg" src="{{chai.image.url}}" alt="">
+<div class="bg-gray-500 p-8 column-gap-4" >
+    <img class=" rounded h-60 w-45 shadow-lg" src="{% static chai.image_path %}" alt="">
     <h3 class="font-bold text-2xl text-yellow-500 text-center" >{{chai.name}}</h3> 
     <a href="#">
         <div class=" mt-10 "> 

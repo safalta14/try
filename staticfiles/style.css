@@ -61,7 +61,7 @@ font-weight: bold;
 }
 
 .front{
-    background-image: url(../media/chai/imggg.jpg);
+    background-image: url('/static/media/chai/imggg.jpg');
     height:540px;
     width:100%;
     opacity:0.9;

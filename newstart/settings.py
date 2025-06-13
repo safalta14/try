@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@q!+*&!f=6t411%$h6%-@3r6^o-=fh^81$kjur0_82530y!4c^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','tryyyy-bj4j.onrender.com']
 
@@ -48,9 +48,8 @@ TAILWIND_APP_NAME='theme'
 # INTERNAL_IPS=['192.168.1.1']
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -138,8 +137,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #     BASE_DIR/'STATIC',
 # )
 
-MEDIA_URL='/media/'
-MEDIA_ROOT=BASE_DIR/'media'
+# MEDIA_URL='/media/'
+# MEDIA_ROOT=BASE_DIR/'media'
 
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')](myself)
 

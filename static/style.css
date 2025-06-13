@@ -14,7 +14,9 @@ body{
     
 } */
 .picture{
-    background-image: url(../media/chai/login.jpg);
+    /* background-image: url(../sta/media/chai/login.jpg); */
+    /* background-image: url(../static/chai/login.jpg); */
+    background-image: url('../static/media/chai/login.jpg');
     /* height: 800px;
     width:700px; */
     display: flex;
@@ -61,7 +63,8 @@ font-weight: bold;
 }
 
 .front{
-    background-image: url(../media/chai/imggg.jpg);
+    /* background-image: url(../media/chai/imggg.jpg); */
+    background-image: url('/static/media/chai/imggg.jpg');
     height:540px;
     width:100%;
     opacity:0.9;

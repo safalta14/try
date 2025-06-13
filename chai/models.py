@@ -11,7 +11,8 @@ class chaivariety(models.Model):
         ('GT','ginger'),
     ]
     name=models.CharField(max_length=100)
-    image=models.ImageField(upload_to='chai/')
+    # image=models.ImageField(upload_to='chai/')
+    image_path=models.CharField(max_length=200, default='media/chai/default.png')
     date_added=models.DateTimeField(default=timezone.now)
     type=models.CharField(max_length=2, choices=Chai_Types_Choices)
     description=models.TextField(default='empty')
