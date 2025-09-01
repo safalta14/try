@@ -1,0 +1,50 @@
+{%load static%} 
+<!DOCTYPE html> 
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title> <link rel="stylesheet" href="{% static 'style.css' %}">
+   </head> 
+   <body> 
+    <!-- <form method="GET" action="/calling"> -->
+     <div id="center"> 
+         <div class="box style"></div>  
+           <input type="text" id="centering" name="city" placeholder="Enter the city name"> 
+
+         <button class="submitting" onclick="getWeather()">Submit</button>  
+      
+          <div id="result"></div> 
+        </div>
+          
+        <!-- </form> -->
+         <script src="{% static 'practice.js' %}"></script>  
+
+
+
+
+
+
+
+
+ <!-- <form method="POST" action="/">
+  {% csrf_token %}
+  <input type="text" name="city" placeholder="Enter city">
+  <button type="submit">Save</button>
+</form>
+
+ Show saved cities 
+<ul>
+  {% for c in cities %}
+    <li>{{ c.name }}</li>
+  {% endfor %}
+</ul>
+
+ Weather result (fetched by JS) 
+<div id="weather-info"></div>
+
+<script src="{% static 'practice.js' %}"></script> -->
+
+    </body> 
+</html>  
+

@@ -1,0 +1,127 @@
+ /* @import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Mountains+of+Christmas:wght@400;700&family=Sansita+Swashed:wght@300..900&display=swap'); */
+
+ body,html{
+   position:relative;
+   font-family: "Mountains of Christmas", serif;
+    margin:0;
+    padding:0;
+    height: 100%;
+ }
+ body::before{
+   content: '';
+    /* background-image:url("./images/img\ 5.jpg"); */
+   background-size: 100% 100%;
+    height: 100vh;
+     width:100vw;
+    z-index:-1;
+    /* top:0;
+    left:0; */
+    position: absolute;
+    opacity: 0.9;
+
+ }
+ 
+ /* for middle div  */
+#center{             
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    justify-content: center;
+
+    height:420px;
+    /* min-height:400px;
+    max-height:600px; */
+    width: 330px;
+    
+    padding: 10px 10px;  
+    
+    top:50%;
+    left: 50%; 
+
+    transform: translate(-50%, -50%);  
+   
+    background: linear-gradient(to right,rgba(38, 132, 240, 0.05),rgba(35, 127, 231,0.05)),url("./images/img_1.webp");
+    background-size: 100% 100%;
+    border-radius: 5px;
+    border: solid 1px black;
+
+    opacity:0.6;
+    z-index:1;
+     gap: 15px; 
+}
+
+#centering{
+    display: flex;
+    justify-content: center;
+    position:relative; 
+    
+    top:5px;
+
+    width:300px;
+    height: 50px;
+ 
+    margin-left:10px;
+    gap:10px;
+
+    /* font-weight:bolder; */
+    font-size:16px;
+    font-weight: bold;
+
+    outline: none;
+    border-color: aquamarine;
+    box-shadow: 0 0 5px aquamarine;
+    border-radius: 18px;
+    
+  
+}
+ .submitting{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* margin-bottom:40px; */
+    margin-left:10%;
+
+    height:45px;
+    width: 50px;
+
+    border-radius: 12px;
+    box-shadow: 0 0 5px aquamarine;
+    border-color: aquamarine;
+
+    opacity: 1;
+    /* gap:10px; */
+ }
+
+ .highlight{
+    background-color: cadetblue;
+ }
+
+    #result{
+    display: flex;
+    position:relative;
+    flex-direction: column;
+
+    height:400px;
+    width:305px;
+
+   
+    /* margin-top:10px;  */
+
+    border:none; 
+    outline:none;
+    /* color: rgb(1, 1, 10); */
+    font-size: 20px;
+    font-weight:700;
+    font-family: Arial, sans-serif;
+
+     z-index:1;
+    opacity:1; 
+ }  
+
+ .bg{
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+ }
